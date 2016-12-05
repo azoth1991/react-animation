@@ -1,21 +1,20 @@
 import {observable, action} from 'mobx';
-import Server from '../api/server';
-import tools from '../lib/tools'
-import ListModel from '../models/ListModel'
 
 export default class ListStore {
-    @observable list = [];
+  @observable list = [];
+  constructor(){
+    let that = this;
+    setInterval(()=>{
+      that.list.map((v,k)=>{
+        that.list[k].style.top++;
+      })
+    },1000);
+  }
 
-    toJS() {
-        return this.list.map(item => item.toJS());
-    }
 
 
-    static fromJS(array, nav) {
-        const listStore = new ListStore();
-        listStore.list = array.map(function (oneList) {
-            return ListModel.fromJS(listStore, oneList);
-        });
-        return listStore;
-    }
+  @action pushList(x,y){
+    this.list.push({style:{left:x,top:y}});
+  }
+
 }

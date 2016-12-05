@@ -38,6 +38,7 @@
     "mobx": "^2.6.3",
     "mobx-react-devtools": "^4.2.6",
     "react": "^15.4.1",
+    "react-addons-transition-group": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-fastclick": "^2.1.2",
     "react-hot-loader": "^2.0.0-alpha-4",

@@ -1,6 +1,19 @@
 @import "utils/common.less";
 
-body, html {
+body, html ,#root,.stage{
   height: 100%;
+  width: 100%;
   background-color: #fff;
+  overflow: hidden;
+}
+
+.love-icon{
+  opacity: 0.1;
+  .px2rem750(width,150);
+  .px2rem750(height,150);
+  background-image: url(../images/love.png);
+  background-size: 100% 100%;
+  position: absolute;
+  transition: all 0.5s;
+  transform-origin:50% 0;
 }

@@ -1,70 +1,26 @@
 export default class ListModel {
-    store;
-    hotProductUrl;
-    pmId;
-    productId;
-    promotionId;
-    cnName;
-    samMemberPrice;
-    promotionPrice;
-    dxxPriceDifference;
-    maketPrice;
-    yhdPrice;
-    specification;
 
-    constructor(store,
-                hotProductUrl,
-                pmId,
-                productId,
-                promotionId,
-                cnName,
-                samMemberPrice,
-                promotionPrice,
-                dxxPriceDifference,
-                maketPrice, yhdPrice, specification) {
-        this.store = store;
-        this.hotProductUrl = hotProductUrl;
-        this.pmId = pmId;
-        this.productId = productId;
-        this.promotionId = promotionId;
-        this.cnName = cnName;
-        this.samMemberPrice = samMemberPrice;
-        this.dxxPriceDifference = dxxPriceDifference;
-        this.promotionPrice = promotionPrice;
-        this.maketPrice = maketPrice;
-        this.yhdPrice = yhdPrice;
-        this.specification = specification;
-    }
+  _x;
+  _y;
 
-    toJS() {
-        return {
-            store: this.store,
-            hotProductUrl: this.hotProductUrl,
-            pmId: this.pmId,
-            productId: this.productId,
-            promotionId: this.promotionId,
-            cnName: this.cnName,
-            samMemberPrice: this.samMemberPrice,
-            promotionPrice: this.promotionPrice,
-            dxxPriceDifference: this.dxxPriceDifference,
-            maketPrice: this.maketPrice,
-            yhdPrice: this.yhdPrice,
-            specification: this.specification
-        };
-    }
+  constructor(store, _x, _y) {
+    this.store = store;
+    this._x = _x;
+    this._y = _y;
 
-    static fromJS(store, object) {
-        return new ListModel(store,
-            object.hotProductUrl,
-            object.pmId,
-            object.productId,
-            object.promotionId,
-            object.cnName,
-            object.samMemberPrice,
-            object.promotionPrice,
-            object.dxxPriceDifference,
-            object.maketPrice,
-            object.yhdPrice,
-            object.specification);
-    }
+  }
+
+  toJS() {
+    return {
+      store: this.store,
+      _x: this._x,
+      _y: this._y
+    };
+  }
+
+  static fromJS(store, object) {
+    return new ListModel(store,
+      object._x,
+      object._y)
+  }
 }
